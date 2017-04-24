@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import RaisedButton from 'material-ui/RaisedButton'
 import AppBar from 'material-ui/AppBar'
 import { List } from 'material-ui/List'
 import Divider from 'material-ui/Divider'
@@ -13,6 +13,7 @@ import { Players } from '../api/players'
 import Player from './Player'
 import TeamList from './Team-list'
 import TeamStats from './Team-stats'
+import AccountsWrapper from './AccountsWrapper'
 
 export class App extends Component {
 	constructor(props) {
@@ -38,8 +39,10 @@ export class App extends Component {
 					<AppBar 
 						title="Football Application"
 						iconClassNameRight="muidocs-icon-navigation-expand-more"
-						showMenuIconButton={false}
-					/>
+						showMenuIconButton={false}>
+						<AccountsWrapper />
+					</AppBar>
+
 					<div className="row">
 						<div className='col s12 m7'>
 							<Player />
@@ -71,7 +74,9 @@ App.propTypes = {
 export default createContainer( () => {
 	Meteor.subscribe('players')
 
+	const user = Meteor.userId()
+
 	return {
-		players: Players.find({}, {sort: {name: 1 }}).fetch(),	// Players.find({name: "Manny"})
+		players: Players.find({ owner: user }, {sort: {name: 1 }}).fetch(),	// Players.find({name: "Manny"})
 	}
 }, App)

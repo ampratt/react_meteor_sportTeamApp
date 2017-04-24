@@ -15,7 +15,8 @@ const PlayerSchema = new SimpleSchema({
 	gameStrategy: { type: Number, defaultValue: 0 },
 	teamPlayer: { type: Number, defaultValue: 0 },
 	instincts: { type: Number, defaultValue: 0 },
-	notes: { type: String, optional: true}
+	notes: { type: String, optional: true},
+	owner: { type: String },
 })
 
 Players.attachSchema(PlayerSchema)
