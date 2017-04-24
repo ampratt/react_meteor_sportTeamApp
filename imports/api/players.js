@@ -3,6 +3,18 @@ import { Mongo } from 'meteor/mongo'
 // Mongo collection ~= SQL table
 export const Players = new Mongo.Collection('Players')
 
+Players.allow({
+	insert() { return false },
+	update() { return false },
+	remove() { return false }
+})
+
+Players.deny({
+	insert() { return true },
+	insert() { return true },
+	insert() { return true },
+})
+
 // Schema to validate that the data is of correct type
 const PlayerSchema = new SimpleSchema({
 	name: { type: String},
