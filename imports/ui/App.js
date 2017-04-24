@@ -15,12 +15,28 @@ import TeamList from './Team-list'
 import TeamStats from './Team-stats'
 import AccountsWrapper from './AccountsWrapper'
 
+const tempPlayer = {
+	name: "Temp Player",
+	team: "Lynda",
+	speed: 2,
+	ballSkills: 3,
+	passingSkills: 2,
+	xFactor: 0,
+	strength: 0,
+	gameStrategy: 1,
+	teamPlayer: 1,
+	tackling: 0,
+	notes: "this player is only temporary",
+}
+
 export class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			players: []
+			//players: []
+			currentPlayer: tempPlayer
 		}
+		this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this)
 	}
 
 	renderPlayers() {
@@ -28,8 +44,15 @@ export class App extends Component {
 			<TeamList 
 				key={player._id} 
 				player={player}
+				updateCurrentPlayer={this.updateCurrentPlayer}
 			/>
 		))
+	}
+
+	updateCurrentPlayer(player) {
+		this.setState({
+			currentPlayer: player,
+		})
 	}
 
 	render() {
@@ -45,7 +68,9 @@ export class App extends Component {
 
 					<div className="row">
 						<div className='col s12 m7'>
-							<Player />
+							<Player 
+								player={this.state.currentPlayer}
+							/>
 						</div>
 						<div className='col s12 m5'>
 							<h2>Team List</h2>
@@ -76,6 +101,7 @@ export default createContainer( () => {
 
 	const user = Meteor.userId()
 
+	// setting the players in state
 	return {
 		players: Players.find({ owner: user }, {sort: {name: 1 }}).fetch(),	// Players.find({name: "Manny"})
 	}

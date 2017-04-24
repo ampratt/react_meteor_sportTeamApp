@@ -21,13 +21,18 @@ const styles = {
 
 export default class Player extends Component {
 	render() {
+		const player = this.props.player
+		const defense = player.tackling + player.speed + player.strength + player.gameStrategy
+		const offense = player.speed + player.ballSkills + player.passingSkills + player.xFactor + player.gameStrategy + player.teamPlayer
+		const total = player.speed + player.ballSkills + player.passingSkills + player.xFactor + player.gameStrategy + player.teamPlayer + player.strength + player.tackling
+
 		return (
 			<Card>
 				<CardMedia
 				  overlay={
 				  	<CardTitle 
-				  		title="Aaron Pratt" 
-				  		subtitle="Offense: 12 - Defense: 11" 
+				  		title={player.name} 
+				  		subtitle={`Offense: ${offense} - Defense: ${defense} - Total: ${total}`} 
 			  		/>
 			  	  }
 				>
@@ -35,6 +40,7 @@ export default class Player extends Component {
 				</CardMedia>
 				<CardText>
 					<div style={styles.wrapper}>
+
 				        <Chip
 				          backgroundColor={blue200}
 				          style={styles.chip}
@@ -43,10 +49,11 @@ export default class Player extends Component {
 				          	size={32} 
 				          	color={blue200} 
 				          	backgroundColor={blue900}>
-				            3
+				            {player.speed}
 				          </Avatar>
 				          Speed
 				        </Chip>
+
 				        <Chip
 				          backgroundColor={blue200}
 				          style={styles.chip}
@@ -55,10 +62,11 @@ export default class Player extends Component {
 				          	size={32} 
 				          	color={blue200} 
 				          	backgroundColor={blue900}>
-				            2
+				            {player.ballSkills}
 				          </Avatar>
 				          Ball skills
 				        </Chip>
+
 				        <Chip
 				          backgroundColor={blue200}
 				          style={styles.chip}
@@ -67,10 +75,11 @@ export default class Player extends Component {
 				          	size={32} 
 				          	color={blue200} 
 				          	backgroundColor={blue900}>
-				            3
+				            {player.passingSkills}
 				          </Avatar>
 				          Passing skills
 				        </Chip>
+
 				        <Chip
 				          backgroundColor={blue200}
 				          style={styles.chip}
@@ -79,10 +88,11 @@ export default class Player extends Component {
 				          	size={32} 
 				          	color={blue200} 
 				          	backgroundColor={blue900}>
-				            3
+				            {player.xFactor}
 				          </Avatar>
 				          X factor
-				        </Chip>		
+				        </Chip>	
+
 				        <Chip
 				          backgroundColor={blue200}
 				          style={styles.chip}
@@ -91,9 +101,35 @@ export default class Player extends Component {
 				          	size={32} 
 				          	color={blue200} 
 				          	backgroundColor={blue900}>
-				            1
+				            {player.strength}
 				          </Avatar>
-				          Toughness
+				          Strength
+				        </Chip>	
+
+				        <Chip
+				          backgroundColor={blue200}
+				          style={styles.chip}
+				        >
+				          <Avatar 
+				          	size={32} 
+				          	color={blue200} 
+				          	backgroundColor={blue900}>
+				            {player.gameStrategy}
+				          </Avatar>
+				          Game strategy
+				        </Chip>	
+
+				        <Chip
+				          backgroundColor={blue200}
+				          style={styles.chip}
+				        >
+				          <Avatar 
+				          	size={32} 
+				          	color={blue200} 
+				          	backgroundColor={blue900}>
+				            {player.teamPlayer}
+				          </Avatar>
+				          Team player
 				        </Chip>	
 				        <Chip
 				          backgroundColor={blue200}
@@ -103,21 +139,9 @@ export default class Player extends Component {
 				          	size={32} 
 				          	color={blue200} 
 				          	backgroundColor={blue900}>
-				            2
+				            {player.tackling}
 				          </Avatar>
-				          Game strategy
-				        </Chip>			        		        
-				        <Chip
-				          backgroundColor={blue200}
-				          style={styles.chip}
-				        >
-				          <Avatar 
-				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
-				            2
-				          </Avatar>
-				          Team player
+				          Tackling
 				        </Chip>	
 					</div>
 		        </CardText>

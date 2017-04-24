@@ -16,7 +16,7 @@ export default class NewPlayer extends Component {
 			strength: this.refs.strength.value,
 			gameStrategy: this.refs.gameStrategy.value,
 			teamPlayer: this.refs.teamPlayer.value,
-			instincts: this.refs.instincts.value,
+			tackling: this.refs.tackling.value,
 			notes: this.refs.notes.value,
 			createdAt: new Date(),
 			owner: Meteor.userId(),
@@ -130,8 +130,8 @@ export default class NewPlayer extends Component {
 							</select>
 						</div>	
 						<div className="input-field col s6">
-							<h5>Instincts</h5>
-							<select className="browser-default" ref="instincts">
+							<h5>Tackling</h5>
+							<select className="browser-default" ref="tackling">
 								<option value="0">0 - Hasn't demonstrated skills</option>
 								<option value="1">1 - Needs improvement</option>
 								<option value="2">2 - Acceptable skills</option>
