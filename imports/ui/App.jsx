@@ -4,6 +4,10 @@ import RaisedButton from 'material-ui/RaisedButton'
 import AppBar from 'material-ui/AppBar'
 import { List } from 'material-ui/List'
 import Divider from 'material-ui/Divider'
+import { createContainer } from 'meteor/react-meteor-data'
+import { Link } from 'react-router'
+
+
 
 import Player from './Player'
 import TeamList from './Team-list'
@@ -27,7 +31,7 @@ export default class App extends Component {
 					ballSkills: 3,
 					passingSkills: 2,
 					xFactor: 3,
-					toughness: 1,
+					strength: 1,
 					gameStrategy: 2,
 					teamPlayer: 2,
 				},
@@ -38,7 +42,7 @@ export default class App extends Component {
 					ballSkills: 3,
 					passingSkills: 2,
 					xFactor: 3,
-					toughness: 1,
+					strength: 1,
 					gameStrategy: 2,
 					teamPlayer: 2,
 				},
@@ -49,7 +53,7 @@ export default class App extends Component {
 					ballSkills: 3,
 					passingSkills: 2,
 					xFactor: 3,
-					toughness: 1,
+					strength: 1,
 					gameStrategy: 2,
 					teamPlayer: 2,
 				}

@@ -69,7 +69,7 @@ export default class Player extends Component {
 				          	backgroundColor={blue900}>
 				            3
 				          </Avatar>
-				          Speed
+				          Passing skills
 				        </Chip>
 				        <Chip
 				          backgroundColor={blue200}
