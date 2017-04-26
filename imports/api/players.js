@@ -12,7 +12,7 @@ Players.allow({
 Players.deny({
 	insert() { return true },
 	insert() { return true },
-	insert() { return true },
+	insert() { return true }
 })
 
 // Schema to validate that the data is of correct type

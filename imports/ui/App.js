@@ -14,6 +14,7 @@ import Player from './Player'
 import TeamList from './Team-list'
 import TeamStats from './Team-stats'
 import AccountsWrapper from './AccountsWrapper'
+import Edit from './EditPlayer'
 
 const tempPlayer = {
 	name: "Temp Player",
@@ -34,9 +35,12 @@ export class App extends Component {
 		super(props)
 		this.state = {
 			//players: []
-			currentPlayer: tempPlayer
+			currentPlayer: tempPlayer,
+			showEditPlayer: false,
 		}
 		this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this)
+		this.showEditForm = this.showEditForm.bind(this)
+		this.showTeamStats = this.showTeamStats.bind(this)
 	}
 
 	renderPlayers() {
@@ -55,6 +59,30 @@ export class App extends Component {
 		})
 	}
 
+	showEditForm() {
+		this.setState({
+			showEditPlayer: true
+		})
+	}
+
+	showTeamStats() {
+		this.setState({
+			showEditPlayer: false
+		})
+	}
+
+	showForm() {
+		if (this.state.showEditPlayer) {
+			return ( 
+				<Edit currentPlayer={this.state.currentPlayer}
+					  showTeamStats={this.showTeamStats}
+				/>
+			)
+		} else {
+			return ( <TeamStats /> )
+		}
+	}
+
 	render() {
 		return (
 			<MuiThemeProvider>
@@ -70,6 +98,7 @@ export class App extends Component {
 						<div className='col s12 m7'>
 							<Player 
 								player={this.state.currentPlayer}
+								showEditForm={this.showEditForm}
 							/>
 						</div>
 						<div className='col s12 m5'>
@@ -83,7 +112,7 @@ export class App extends Component {
 							<Divider />
 						</div>
 						<div className='col s12 m5'>
-							<TeamStats />
+							{this.showForm()}
 						</div>
 					</div>
 				</div>
