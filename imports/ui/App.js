@@ -79,7 +79,7 @@ export class App extends Component {
 				/>
 			)
 		} else {
-			return ( <TeamStats /> )
+			return ( <TeamStats players={this.props.players} /> )
 		}
 	}
 
@@ -90,7 +90,8 @@ export class App extends Component {
 					<AppBar 
 						title="Football Application"
 						iconClassNameRight="muidocs-icon-navigation-expand-more"
-						showMenuIconButton={false}>
+						showMenuIconButton={false}
+						style={{backgroundColor: '#0277BD'}}>
 						<AccountsWrapper />
 					</AppBar>
 
@@ -104,17 +105,22 @@ export class App extends Component {
 						<div className='col s12 m5'>
 							<h2>Team List</h2>
 								<Link to="/newPlayer" 
-									  className="waves-effect waves-light btn">Add player</Link>
+									  className="waves-effect waves-light btn light-blue darken-3">Add player</Link>
 							<Divider />
 							<List>
 								{this.renderPlayers()}
 							</List>
 							<Divider />
 						</div>
-						<div className='col s12 m5'>
-							{this.showForm()}
-						</div>
 					</div>
+					<div className="row">
+						<div className='col s12'>
+							<br/>
+							<Divider />
+							{this.showForm()}
+							<Divider />
+						</div>
+					</div>	
 				</div>
 			</MuiThemeProvider>
 		)

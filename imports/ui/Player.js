@@ -4,7 +4,7 @@ import { Card, CardActions, CardMedia, CardTitle, CardText }
 import RaisedButton from 'material-ui/RaisedButton'
 import Avatar from 'material-ui/Avatar'
 import Chip from 'material-ui/Chip'
-import { blue200, blue900 } from 'material-ui/styles/colors'
+import { blue200, lightBlue800, lightBlue50 } from 'material-ui/styles/colors'
 
 const styles = {
 	chip: {
@@ -51,8 +51,8 @@ export default class Player extends Component {
 				        >
 				          <Avatar 
 				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
+				          	color={lightBlue50} 
+				          	backgroundColor={lightBlue800}>
 				            {player.speed}
 				          </Avatar>
 				          Speed
@@ -64,8 +64,8 @@ export default class Player extends Component {
 				        >
 				          <Avatar 
 				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
+				          	color={lightBlue50} 
+				          	backgroundColor={lightBlue800}>
 				            {player.ballSkills}
 				          </Avatar>
 				          Ball skills
@@ -77,8 +77,8 @@ export default class Player extends Component {
 				        >
 				          <Avatar 
 				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
+				          	color={lightBlue50} 
+				          	backgroundColor={lightBlue800}>
 				            {player.passingSkills}
 				          </Avatar>
 				          Passing skills
@@ -90,8 +90,8 @@ export default class Player extends Component {
 				        >
 				          <Avatar 
 				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
+				          	color={lightBlue50} 
+				          	backgroundColor={lightBlue800}>
 				            {player.xFactor}
 				          </Avatar>
 				          X factor
@@ -103,8 +103,8 @@ export default class Player extends Component {
 				        >
 				          <Avatar 
 				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
+				          	color={lightBlue50} 
+				          	backgroundColor={lightBlue800}>
 				            {player.strength}
 				          </Avatar>
 				          Strength
@@ -116,8 +116,8 @@ export default class Player extends Component {
 				        >
 				          <Avatar 
 				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
+				          	color={lightBlue50} 
+				          	backgroundColor={lightBlue800}>
 				            {player.gameStrategy}
 				          </Avatar>
 				          Game strategy
@@ -129,8 +129,8 @@ export default class Player extends Component {
 				        >
 				          <Avatar 
 				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
+				          	color={lightBlue50} 
+				          	backgroundColor={lightBlue800}>
 				            {player.teamPlayer}
 				          </Avatar>
 				          Team player
@@ -141,8 +141,8 @@ export default class Player extends Component {
 				        >
 				          <Avatar 
 				          	size={32} 
-				          	color={blue200} 
-				          	backgroundColor={blue900}>
+				          	color={lightBlue50} 
+				          	backgroundColor={lightBlue800}>
 				            {player.tackling}
 				          </Avatar>
 				          Tackling
