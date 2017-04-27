@@ -15,7 +15,12 @@ export default class EditPlayer extends Component {
 
 	cancelUpdate() {
 		console.log("changes CANCELED!")
-		this.showTeamStats()	
+		this.props.showTeamStats()	
+	}
+
+	updateCurrentPlayer(player) {
+		console.log("i am calling updateCurrentPlayer")
+		this.props.updateCurrentPlayer(player)
 	}
 
 	editPlayer(event) {
@@ -42,8 +47,10 @@ export default class EditPlayer extends Component {
 			if (error) {
 				alert("Oops, something went wrong: " + error.reason)
 			} else {
-				console.log("Player updated")
+				console.log("Player updated", player)
+				// need to update player in state to update card view
 				this.showTeamStats()
+				this.updateCurrentPlayer(player)
 			}
 		})
 

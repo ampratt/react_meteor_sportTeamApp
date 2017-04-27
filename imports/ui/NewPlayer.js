@@ -11,7 +11,7 @@ const styles = {
 export default class NewPlayer extends Component {
 
 	cancelSubmit() {
-		console.log("Player CANCELED!")
+		console.log("Player NOT ADDED!")
 		browserHistory.push('/')	
 	}
 	submitPlayer(event) {
@@ -37,7 +37,7 @@ export default class NewPlayer extends Component {
 			if (error) {
 				alert("Oops, something went wrong: " + error.reason)
 			} else {
-				alert("Player Added")
+				console.log("Player Added", player)
 				browserHistory.push('/')
 			}
 		})

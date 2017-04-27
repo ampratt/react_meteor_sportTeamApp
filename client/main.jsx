@@ -18,7 +18,6 @@ Meteor.startup(() => {
 			<Route path='/' component={App} />
 			<Route path='/newPlayer' component={NewPlayer} />
 			<Route path='*' component={Lost404} />
-		  
 		</Router>
 		),
 		document.getElementById('render-target')

@@ -54,9 +54,9 @@ export default class Player extends Component {
 
 	render() {
 		const player = this.props.player
-		const defense = player.tackling + player.speed + player.strength + player.gameStrategy
-		const offense = player.speed + player.ballSkills + player.passingSkills + player.xFactor + player.gameStrategy + player.teamPlayer
-		const total = player.speed + player.ballSkills + player.passingSkills + player.xFactor + player.gameStrategy + player.teamPlayer + player.strength + player.tackling
+		const defense = parseInt(player.tackling) + parseInt(player.speed) + parseInt(player.strength) + parseInt(player.gameStrategy)
+		const offense = parseInt(player.speed) + parseInt(player.ballSkills) + parseInt(player.passingSkills) + parseInt(player.xFactor) + parseInt(player.gameStrategy) + parseInt(player.teamPlayer)
+		const total = parseInt(player.speed) + parseInt(player.ballSkills) + parseInt(player.passingSkills) + parseInt(player.xFactor) + parseInt(player.gameStrategy) + parseInt(player.teamPlayer) + parseInt(player.strength) + parseInt(player.tackling)
 
 		return (
 			<Card>

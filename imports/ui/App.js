@@ -64,6 +64,7 @@ export class App extends Component {
 		this.setState({
 			currentPlayer: player,
 		})
+		console.log("i called updateCurrentPlayer")
 	}
 
 	showEditForm() {
@@ -83,6 +84,7 @@ export class App extends Component {
 			return ( 
 				<Edit currentPlayer={this.state.currentPlayer}
 					  showTeamStats={this.showTeamStats}
+   					  updateCurrentPlayer={this.updateCurrentPlayer}
 				/>
 			)
 		} else {
