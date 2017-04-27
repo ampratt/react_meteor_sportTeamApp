@@ -30,6 +30,13 @@ const tempPlayer = {
 	notes: "this player is only temporary",
 }
 
+const styles = {
+	list: {
+		height: 400,
+		overflowY: 'auto',
+	}
+}
+
 export class App extends Component {
 	constructor(props) {
 		super(props)
@@ -109,7 +116,7 @@ export class App extends Component {
 								<Link to="/newPlayer" 
 									  className="waves-effect waves-light btn light-blue darken-3"><i className="material-icons left">add</i>Add player</Link>
 							<Divider />
-							<List>
+							<List style={styles.list}>
 								{this.renderPlayers()}
 							</List>
 							<Divider />
