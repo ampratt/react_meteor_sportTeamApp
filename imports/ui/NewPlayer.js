@@ -2,7 +2,18 @@ import React, { Component } from 'react'
 import { browserHistory } from 'react-router'
 import { Players } from '../api/players'
 
+const styles = {
+  	button: {
+  		margin: 8,
+  	}
+}
+
 export default class NewPlayer extends Component {
+
+	cancelSubmit() {
+		console.log("Player CANCELED!")
+		browserHistory.push('/')	
+	}
 	submitPlayer(event) {
 		event.preventDefault()
 
@@ -146,8 +157,12 @@ export default class NewPlayer extends Component {
 							<textarea placeholder="Notes" ref="notes" className="materialize-textarea"/>
 						</div>	
 						<div className="input-field col s6">
-							<button className="btn waves-effect waves-light light-blue darken-3" type="submit" name="action">
+							<button className="btn waves-effect waves-light light-blue darken-3" style={styles.button} type="submit" name="action">
 								Submit<i className="material-icons right">send</i>
+							</button>
+							<button className="btn waves-effect waves-light grey lighten-2 grey-text text-darken-4" style={styles.button}
+									onClick={this.cancelSubmit.bind(this)}>
+						      	Cancel
 							</button>
 						</div>	
 					</div>

@@ -90,11 +90,11 @@ export default class TeamStats extends Component {
 					<div className="col s12 m5">
 						<h4>Scores in % of max possible</h4>
 						<Divider />
-						<h4>Team offense: {offense}%</h4>
-						<h4>Team defense: {defense}%</h4>
-						<h4>Team total: {total}%</h4>
+						<h5>Team offense: {offense}%</h5>
+						<h5>Team defense: {defense}%</h5>
+						<h5>Team total: {total}%</h5>
 						<Divider />
-						<h4>Number of players: {numPlayers}</h4>
+						<h5>Number of players: {numPlayers}</h5>
 					</div>
 				</div>
 			</div>

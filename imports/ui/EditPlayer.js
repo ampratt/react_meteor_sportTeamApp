@@ -1,10 +1,21 @@
 import React, { Component } from 'react'
 
+const styles = {
+  	button: {
+  		margin: 8,
+  	}
+}
 
 export default class EditPlayer extends Component {
+
 	showTeamStats() {
 		// on player save, team stats needs to be back in view
 		this.props.showTeamStats()
+	}
+
+	cancelUpdate() {
+		console.log("changes CANCELED!")
+		this.showTeamStats()	
 	}
 
 	editPlayer(event) {
@@ -156,8 +167,12 @@ export default class EditPlayer extends Component {
 										defaultValue={currentPlayer.notes} />
 						</div>	
 						<div className="input-field col s6">
-							<button className="btn waves-effect waves-light light-blue darken-3" type="submit" name="action">
+							<button className="btn waves-effect waves-light light-blue darken-3" style={styles.button} type="submit" name="action">
 								Submit<i className="material-icons right">send</i>
+							</button>
+							<button className="btn waves-effect waves-light grey lighten-2 grey-text text-darken-4" style={styles.button}
+									onClick={this.cancelUpdate.bind(this)}>
+						      	Cancel
 							</button>
 						</div>	
 					</div>

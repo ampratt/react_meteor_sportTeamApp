@@ -99,13 +99,15 @@ export class App extends Component {
 						<div className='col s12 m7'>
 							<Player 
 								player={this.state.currentPlayer}
+								showEditPlayer={this.state.showEditPlayer}
 								showEditForm={this.showEditForm}
+								showTeamStats={this.showTeamStats}
 							/>
 						</div>
 						<div className='col s12 m5'>
 							<h2>Team List</h2>
 								<Link to="/newPlayer" 
-									  className="waves-effect waves-light btn light-blue darken-3">Add player</Link>
+									  className="waves-effect waves-light btn light-blue darken-3"><i className="material-icons left">add</i>Add player</Link>
 							<Divider />
 							<List>
 								{this.renderPlayers()}

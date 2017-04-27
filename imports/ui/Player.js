@@ -4,6 +4,7 @@ import { Card, CardActions, CardMedia, CardTitle, CardText }
 import RaisedButton from 'material-ui/RaisedButton'
 import Avatar from 'material-ui/Avatar'
 import Chip from 'material-ui/Chip'
+import EditIcon from 'material-ui/svg-icons/editor/mode-edit'
 import { blue200, lightBlue800, lightBlue50 } from 'material-ui/styles/colors'
 
 const styles = {
@@ -22,6 +23,33 @@ const styles = {
 export default class Player extends Component {
 	showEditForm() {
 		this.props.showEditForm()
+	}
+
+	showTeamStats() {
+		this.props.showTeamStats()
+	}
+
+	toggleButton() {
+		if (!this.props.showEditPlayer) {
+			return ( 
+				<RaisedButton 
+					label="Edit player stats"
+					labelPosition="after"
+					style={styles.button}
+					icon={<EditIcon />}
+					onClick={this.showEditForm.bind(this)}
+				/>
+			)
+		} else {
+			return ( 
+				<RaisedButton 
+					label="Show team stats"
+					labelPosition="before"
+					style={styles.button}
+					onClick={this.showTeamStats.bind(this)}
+				/>
+			)
+		}
 	}
 
 	render() {
@@ -150,14 +178,17 @@ export default class Player extends Component {
 					</div>
 		        </CardText>
 				<CardActions>
-					<RaisedButton 
-						label="Edit player/stats"
-						labelPosition="before"
-						style={styles.button}
-						onClick={this.showEditForm.bind(this)}
-					/>
+					{this.toggleButton()}
 				</CardActions>
 			</Card>
 		)
 	} // Render
 }
+
+// <RaisedButton 
+// 	label="Edit player stats"
+// 	labelPosition="after"
+// 	style={styles.button}
+// 	icon={<EditIcon />}
+// 	onClick={this.showEditForm.bind(this)}
+// />
